@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright 2017 Mapillary AB, Sweden
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     https://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<component>
+	<id type="console-application">com.mapillary.mkseq.desktop</id>
+	<metadata_license>CC-BY-SA-3.0</metadata_license>
+	<project_license>Apache-2.0</project_license>
+	<developer_name>Mapillary AB</developer_name>
+	<name>mkseq</name>
+	<summary>A tool for preparing photo sequences for upload to Mapillary</summary>
+	<description>
+		<p>
+			mkseq is a tool for basic preprocessing and optimization of
+			sequences of photos on the command‑line and via scripts for upload
+			to Mapillary. It has been developed with Mapillary users in mind
+			who—for whatever reason—cannot or do not want to use a mobile phone
+			camera and a respective Mapillary app to take photos for upload to
+			Mapillary. Whatever the reason, photos which have not been shot
+			with the Mapillary app may require or would benefit of some
+			preprocessing or optimization prior to upload.
+		</p>
+	</description>
+	<categories>
+		<category>Graphics</category>
+		<category>Photography</category>
+		<category>Geography</category>
+		<category>ImageProcessing</category>
+		<category>ConsoleOnly</category>
+	</categories>
+	<releases>
+		<release version="0.1.0.0" date="2017-04-05" timestamp="1491379200">
+			<size type="installed">624907</size>
+		</release>
+	</releases>
+	<mimetypes>
+		<mimetype>image/jpeg</mimetype>
+		<mimetype>application/gpx+xml</mimetype>
+	</mimetypes>
+	<url type="homepage">https://gitne.github.com/mkseq</url>
+	<url type="bugtracker">https://github.com/GITNE/mkseq/issues</url>
+	<url type="help">https://gitne.github.com/mkseq</url>
+	<url type="translate">https://gitne.github.com/mkseq/res/data/lang</url>
+	<updatecontact>GITNE_AT_noreply.users.github.com</updatecontact>
+</component>

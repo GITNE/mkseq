@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright 2017 Mapillary AB, Sweden
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     https://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
 <!-- You may freely edit this file. See commented blocks below for -->
 <!-- some examples of how to customize the build. -->
 <!-- (If you delete it and reopen the project it will be recreated.) -->
@@ -8,7 +23,7 @@
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
 <project name="mkseq" default="default" basedir=".">
-    <description>Builds, tests, and runs the project mkseq.</description>
+    <description>Builds, tests, and runs the mkseq project.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
@@ -68,6 +83,18 @@
     the compile target as the regular run target does. Again, for a list of available 
     properties which you can use, check the target you are overriding in the
     nbproject/build-impl.xml file. 
-
     -->
+    <target name="rpm" depends="jar" description="Build a RPM package.">
+        <property name="rpm.dir" value="${basedir}${file.separator}install${file.separator}RPM"/>
+        <property name="rpm.topdir" value="${rpm.dir}"/>
+        <property name="rpm.spec.file.path" value="${rpm.dir}${file.separator}${rpm.spec.file}"/>
+        <exec executable="rpmbuild" dir="${rpm.dir}" osfamily="unix" logError="true" failonerror="true">
+            <arg line="-bb"/>
+            <arg line="--define"/>
+            <arg value="_sourcedir ${basedir}"/>
+            <arg line="--define"/>
+            <arg value="_topdir ${rpm.topdir}"/>
+            <arg file="${rpm.spec.file.path}"/>
+        </exec>
+    </target>
 </project>
